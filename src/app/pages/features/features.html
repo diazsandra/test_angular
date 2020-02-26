@@ -1,0 +1,58 @@
+<div class="computer">
+    <h2>Características</h2>
+
+    <div class="select-data">
+        <div>
+            <h5>Procesador</h5>
+            <!--<select ng-model="getProcessor" ng-disabled="pcOn">
+                <option value="">---Selecciona un procesador---</option>
+                <option ng-repeat="processor in processors" for={{processor}} ng-value="{{name}}">{{processor.name}}</option>
+            </select>-->
+            <select ng-model="getProcessor" ng-disabled="pcOn" ng-options="processor.name for processor in processors">
+                <option ng-value="{{name}}">---Selecciona un procesador---</option>
+            </select>
+        </div>
+        
+        <div>
+            <h5>Disco Duro</h5>
+            <select ng-model="getHdd" ng-disabled="pcOn" ng-options="hdd.name for hdd in hdds">
+                <option ng-value="{{name}}">---Selecciona un el HDD---</option>
+            </select>
+        </div>
+
+        <div>
+            <h5>RAM</h5>
+            <select ng-model="getRam" ng-disabled="pcOn" ng-options="ram.name for ram in rams">
+                <option ng-value="{{name}}">---Selecciona una Ram---</option>
+            </select>
+        </div>
+        
+        <div>
+            <h5>Tarjeta Gráfica</h5>
+            <select ng-model="getGraphic" ng-disabled="pcOn" ng-options="graphic.name for graphic in graphics">
+                <option ng-value="{{name}}">---Selecciona una tarjeta---</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="selected-data">
+        <h4>La computadora tiene seleccionados:</h4>
+
+        <p>Procesador: <span>{{getProcessor.name}}</span></p>
+        
+        <p>Disco Duro: <span>{{getHdd.name}}</span></p>
+
+        <p>Ram: <span>{{getRam.name}}</span></p>
+        
+        <p>Tarjeta Gráfica: <span>{{getGraphic.name}}</span></p>
+    </div>
+
+    
+
+    <div class="features-button">
+      <button class="features" ng-click="backPage()">
+        <i class="fas fa-chevron-circle-left"></i>
+      </button>
+    </div>
+    
+</div>
