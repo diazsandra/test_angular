@@ -1,5 +1,21 @@
 myApp.factory('ComputerService', function(){
     return {
+        objProc: {
+            name: 'Default Proccesor', 
+            model: 'Default'
+        },
+        objHdd: {
+            name: 'Default Hdd', 
+            model: 'Default'
+        },
+        objRam: {
+            name: 'Default Ram', 
+            model: 'Default'
+        },
+        objGraphic: {
+            name: 'Default Graphic', 
+            model: 'Default'
+        },
         computerStatus: false,
         toogleComputer: function() {
             this.computerStatus = !this.computerStatus
@@ -27,23 +43,30 @@ myApp.factory('ComputerService', function(){
                 return scope.graphics = response.results;
             });
         },
-        getProcessor: "Por default",
         addGetProcessor: function() {
-            return this.getProcessor
+            return this.objProc;
         },
-        getHdd: "Por default",
         addGetHdd: function() {
-            return this.getHdd
+            return this.objHdd
         },
-        getRam: "Por default",
         addGetRam: function() {
-            return this.getRam
+            return this.objRam
         },
-        getGraphic: "Por default",
         addGetGraphic: function() {
-            return this.getGraphic
-        }
-
+            return this.objGraphic
+        },
+        setProcessor: function(proc) {
+            this.objProc = proc;
+        },
+        setHdd: function(hdd) {
+            this.objHdd = hdd;
+        },
+        setRam: function(ram) {
+            this.objRam = ram;
+        },
+        setGraphic: function(graphic) {
+            this.objGraphic = graphic;
+        },
 
     }
 

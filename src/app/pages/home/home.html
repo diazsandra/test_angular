@@ -1,13 +1,25 @@
 <div class="computer">
   <div class="tools-button">
-    <div class="light"><i class="fas fa-circle"></i></div>
-    <button class="tools" ng-click="changePageFromTools()">
-      <i class="fas fa-cog"></i>
-    </button>
+    <div class="light">
+      <i class="fas fa-circle"></i>
+      <i class="fas fa-circle"></i>
+      <i class="fas fa-circle"></i>
+    </div>
+    <div class="tools-btns">
+      <button class="power" ng-style="myObj" ng-click="changePageFromPower()">
+        <i class="fas fa-power-off"></i>
+      </button>
+      <button class="tools" ng-click="changePageFromTools()" ng-disabled="pcOn" >
+        <i class="fas fa-cog"></i>
+      </button>
+    </div>
   </div>
-  <div class="power-button">
-    <button class="power" ng-style="myObj" ng-click="changePageFromPower()">
-      <i class="fas fa-power-off"></i>
-    </button>
+  <div class="consola">
+    <h4>La computadora se prenderá con lo siguiente:</h4>
+    <p>{{ objProc.name }}</p>
+    <p>{{ objHdd.name }}</p>
+    <p>{{ objRam.name }}</p>
+    <p>{{ objGraphic.name }}</p>
   </div>
 </div>
+
